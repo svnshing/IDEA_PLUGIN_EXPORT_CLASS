@@ -1,0 +1,45 @@
+<idea-plugin>
+  <id>com.teligen.svnshing</id>
+  <name>EXPORT CLASS PATCH</name>
+  <version>1.1</version>
+  <vendor email="113402255@QQ.COM" url="">com.github</vendor>
+
+  <description><![CDATA[
+      export the java class files and other js* files to a patch<br>
+      The following features are available:
+      <ul>
+        <li>optimizing the old version that can not export the faceless inner class of the java class</li>
+        </ul>
+         <p>Numerous plugins depend on the Git Integration plugin.</p>
+    ]]></description>
+
+  <change-notes><![CDATA[
+    ]]>
+  </change-notes>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="145.0"/>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+  <!-- uncomment to enable plugin in all products
+  <depends>com.intellij.modules.lang</depends>
+  -->
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+  </extensions>
+
+  <actions>
+    <!-- Add your actions here -->
+    <action id="exportPatch" class="ExportPatchAction" text="export patch svnshing" description="export patch">
+      <add-to-group group-id="Git.Log.ContextMenu" anchor="after" relative-to-action="ExportSource.ExportSourceAction"/>
+    </action>
+  </actions>
+  <application-components>
+    <component>
+      <implementation-class>ExportPatchComponent</implementation-class>
+    </component>
+  </application-components>
+
+</idea-plugin>
